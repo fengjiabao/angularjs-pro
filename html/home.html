@@ -1,0 +1,63 @@
+	<div class="swiper-container home_page" loop='true' autoplay='3000',>
+	  <div class="swiper-wrapper">
+	    <div class="swiper-slide" ng-repeat="img in [1,2,3,4]">
+	    	<img ng-src="img/indexBannerImg/banner{{img}}.jpg"/>
+	    </div>
+	  </div>
+	</div>
+	<!-- 如果需要分页器 -->
+	<div class="swiper-pagination"></div>
+	<div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-scrollbar"></div>
+	
+	<div class="home_title">
+		<span ng-repeat="img in [1,2,3,4]">
+			<img ng-src="img/indexBannerImg/home_title{{img}}.png"/>
+		</span>
+	</div>
+	<h3 class="home_h3">list of module actions</h3>
+	<div class="home_search">
+		<input placeholder="热搜商品" ng-model="searchText" />
+		<a href="javascript:;">Search</a>
+	</div>
+	<h4 class="home_h4">热卖商品一览表<span>{{countTime}}</span></h4>
+	</div>
+	<table class="home_table">
+		<tr class="tr1">
+			<!--<td>GoodsID</td>-->
+			<td>品牌描述</td>
+			<td>价格</td>
+			<td>折扣</td>
+			<!--<td>Operate</td>-->
+		</tr>
+		<tr class="tr3">
+			<td ng-show="isloading"><img ng-src="img/loading.png" />
+				<span>Loading...</span></td>
+		</tr>
+		<tr class="tr2" ng-repeat="pro in prolist | filter :searchText">
+			<!--<td>{{pro.goodsID}}</td>-->
+			<td>{{pro.goodsName}}</td>
+			<td>{{pro.price | currency}}</td>
+			<td>{{pro.discount}}折</td>
+			<!--<td>delete</td>-->
+		</tr>
+	</table>
+	<div class="section">
+		<div class="home_content" ng-repeat="item in prolist" >
+			<a><img ng-src="{{ item.goodsListImg }}" goodId="{{ item.goodsID }}" ng-click="goodsDetail($event)"/></a>
+			<p>
+				<span>{{ item.price }}￥</span>
+				<span>折扣：{{ item.discount }}折</span>
+			</p>
+			<p>{{ item[2] }}</p>
+		</div>
+		<div class="pagechange">
+			<span  ng-click="pageIndex($event)" name = 'last'>上一页</span>
+			<span  ng-click="pageIndex($event)" name = 'next'>下一页</span>
+		</div>
+	</div>
+	
+	<div class="backTop" ng-click="backTop()" ng-show="showBackBtn">
+		<img ng-src="img/o_top.png" />
+	</div>

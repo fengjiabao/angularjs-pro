@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<script src="js/angular.js"></script>
+		<script src="js/angular-route.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/d3.v3.min.js" charset="utf-8"></script>    
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/home.css"/>
+		<link rel="stylesheet" type="text/css" href="css/goodsdetail.css" />
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<link rel="stylesheet" href="css/person.css"/>
+		<link rel="stylesheet" href="css/personRecords.css" />
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</head>
+	<body ng-app="myApp" ng-controller="myCtrl">
+		<nav>
+			<img ng-src="img/index-01.png"/>
+			<ul>
+				<li ng-show='!nav_show'><a href="#/login">登录</a></li>
+				<li><a href="#/register">注册</a></li>
+				<li ng-show="nav_show">退出</li>
+				<li>{{userID}}</li>
+			</ul>
+		</nav>
+		<article>
+			<div class="index-left">
+				<span class="left_span">
+						System<br />
+						Administration
+				</span>
+				
+				<a href="#/home" ng-click="index_hotsale()">商品首页</a>
+				<!--<p class="index-p1" ng-show="index_hot">热卖</p>-->
+				<a href="#/kind" ng-click="indexlist()">商品分类</a>
+				<!--<ul class="index_kind" ng-show="index_show">-->
+				<ul class="index_kind" ng-show="indexshow">
+					<li ng-repeat="pro2 in prolist2" >
+						<p class="index_p2" ng-click="index_click(pro2.classID)">{{pro2.className}}</p>
+					</li>
+				</ul>
+				<a ng-click='personShow()' style="cursor: pointer;">个人中心</a>
+				<ul class="index_kind" ng-show='personCenter'>
+					<li>
+						<p class="index_p2" ><a href="#person" class="person-location">我的购物车</a></p>
+					</li>
+					<li>
+						<p class="index_p2" ><a href="#personRecords" class="person-location">我的消费记录</a></p>
+					</li>
+				</ul>
+			</div>
+			<div class="list">
+				<ng-view></ng-view>
+				<div class="info">
+					<div>
+						<select id="s_province" name="s_province"></select>  
+					    <select id="s_city" name="s_city" ></select>  
+					    <select id="s_county" name="s_county"></select>
+					    <script class="resources library" src="js/area.js" type="text/javascript"></script>
+					    
+					    <script type="text/javascript">_init_area();</script>
+					    </div>
+					    <div id="show">
+				    </div>
+				</div>
+			</div>
+		</article>
+	</body>
+	<script src="js/route.js"></script>
+	<script src="js/home.js"></script>
+	<script src="js/kind.js"></script>
+	<script src="js/login.js"></script>
+	<script src="js/register.js"></script>
+	<script src="js/detail.js"></script>
+	<script type="text/javascript" src="js/person.js" ></script>
+	<script type="text/javascript" src="js/personRecords.js" ></script>
+	<script type="text/javascript" src="js/area-support.js" ></script>
+</html>
+-               	

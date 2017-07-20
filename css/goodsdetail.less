@@ -1,0 +1,123 @@
+@import "ba.less";
+
+.goodsdetail{
+    .wh(100%,100%);
+    padding-left: 6%;
+    .detail-title{
+        float: left;
+        width: 100%;
+        div:nth-child(1){
+            margin-top: 5px;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #428bca;
+            font-size: 16px;
+            padding-right: 67px;
+           
+            .backHome{
+                float: right;
+                color: #24A5CC;
+                font-size: 13px;
+                cursor: pointer;
+            }
+        }
+        
+        .detail-content{
+            padding-top: 3px;
+        }  
+    }
+    .deliver-address{
+       position: absolute;
+        right: 1.6rem;
+        width: 2rem;
+        top: 70px;
+       p:nth-child(1){
+           margin-bottom: 5px;
+           margin-top: 5px;
+          
+       }
+       input{
+           width: 80%;
+           padding-left: 5px;
+           height: 30px;
+       }
+       input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+            color: #666; 
+            font-size: 12px;
+        } 
+        input:-moz-placeholder, textarea:-moz-placeholder { 
+            color: #666; 
+            font-size: 12px;
+        } 
+        input::-moz-placeholder, textarea::-moz-placeholder { 
+            color: #666; 
+            font-size: 12px;
+        } 
+        input:-ms-input-placeholder, textarea:-ms-input-placeholder { 
+            color: #666; 
+            font-size: 12px;
+        }  
+
+        .countNumber{
+           span{
+               float: left;
+               border: 1px solid #ccc;
+               display: inline-block;
+               height: 28px;
+               width: 40px;
+               line-height: 28px;
+               color: #666;
+               border-right: none;
+               text-align: center;
+               cursor: pointer;
+               &:nth-child(3){
+                   border-right: 1px solid #ccc;
+                   margin-right: 10px;
+               }
+               &.active{
+                   color: #FF6666;
+               }
+               &:nth-child(4),&:nth-child(6){
+                    height: 20px;
+                    width: 20px;
+                    line-height: 20px;
+                    margin-top: 3px;
+               }
+                &:nth-child(6),&:nth-child(5){
+                   border-right: 1px solid #ccc;
+               }
+               &:nth-child(6){
+                   border-left: none;
+               }
+           }    
+         }
+         .shopcar{
+             position: relative;
+             a{
+                 left: 0; 
+                 border-radius: 3px;
+                 cursor: pointer;
+                 display: inline-block;
+                 .wh(160px,40px);
+                 line-height: 40px;
+                 background: #FF6666;
+                 text-align: center;
+                 margin-top: 50px;
+                 color: #fff;
+                 position: absolute;
+                 
+             }
+         }
+    }
+    .addSucess{
+        position: absolute;
+        top: 100px;
+        left: 1.5rem;
+        .wh(400px,150px);
+        line-height: 150px;
+        text-align: center;
+        background: paleturquoise;
+        color: #666;  
+        border-radius: 20px;
+        }
+}

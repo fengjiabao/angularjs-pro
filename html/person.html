@@ -1,0 +1,15 @@
+<h2>我的商品<a class="kind_button1" ng-click="back()">返回首页</a></h2>
+<div class="person-shopcar">
+	<div ng-repeat='item in shopData' class="car-body">
+		<img ng-src="{{item[3]}}"/>
+		<div class='car-content'>
+			<p>{{item[2]}}</p>
+			<p>
+				<span>单价：{{item.price}}￥</span>
+				<span>数量：{{item.number}}</span>
+				<span>总价：{{(item.number*item.price).toFixed(1)}}￥</span>
+				<span class="delete" goodsID="{{ item.goodsID }}" ng-click="deletegoods($event)">删除</span>
+			</p>
+		</div>
+	</div>
+</div>

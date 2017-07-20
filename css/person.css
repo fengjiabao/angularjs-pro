@@ -1,0 +1,34 @@
+h2 {
+  padding-left: 40px;
+  padding-top: 10px;
+}
+.person-shopcar {
+  width: 100%;
+  padding: 40px;
+  height: 100%;
+}
+.person-shopcar .car-body {
+  width: 100%;
+  height: 160px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.person-shopcar .car-body img {
+  float: left;
+  width: 160px;
+  height: 160px;
+}
+.person-shopcar .car-body .car-content {
+  float: left;
+  margin-left: 30px;
+}
+.person-shopcar .car-body .car-content p {
+  width: 350px;
+  margin-top: 10px;
+}
+.person-shopcar .car-body .car-content p .delete {
+  float: right;
+  cursor: pointer;
+  color: #FF6666;
+}
+/*# sourceMappingURL=person.css.map */

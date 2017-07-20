@@ -1,0 +1,46 @@
+<div class="goodsdetail">
+	<div ng-repeat='item in goodsDetailData' class="detail-title">
+		<div> 
+			{{ item.goodsName }} 
+			<span ng-click="back()" class='backHome'>返回</span>
+		</div>
+		<!--<article><img ng-s</article>-->
+		<div >
+			<img ng-src="{{ item[3] }}"/>
+			
+		</div>
+		<div class="detail-content">商品种类：{{ item.className }}</div>
+		<div class="detail-content">商品价格：{{ item.price }}元</div>
+		<div class="detail-content">商品热度：{{ item.hot }}</div>
+		<div class="detail-content">商品折扣：{{ item.discount }}折</div>
+		<div class="detail-content">已购买人数：{{ item.buynumber }}人</div>
+		<div class="detail-content">商品描述：{{ item.detail }}</div>
+	</div>
+	<div ng-repeat='item in goodsbottomImgUrl'>
+		<div><img ng-src="{{ item }}"/></div>
+	</div>
+	<div class="deliver-address">
+		<p>请选择配送地址：</p>
+		<div>
+			<p>买家留言：</p>
+			<input type="text" placeholder="请填写相关留言..."/>
+		</div>
+		<div>
+			<p>请选择商品数量：</p>
+			<p class="countNumber">
+				<span  class="goodsSpan"ng-click="chooseGoodsNum($event)" name='1'>1件</span>
+				<span  class="goodsSpan" ng-click="chooseGoodsNum($event)" name='2'>2件</span>
+				<span  class="goodsSpan" ng-click="chooseGoodsNum($event)" name='3' >3件</span>
+				<span  class="goodsSpan" ng-click="chooseGoodsNum($event)" name='reduce' >-</span>
+				<span>{{ goodsNumber }}</span>
+				<span class="goodsSpan" ng-click="chooseGoodsNum($event)" name='add' >+</span>
+			</p>
+		</div>
+		<div class="shopcar">
+			<a ng-click="addShopCar()">添加购物车</a>
+		</div>
+	</div>
+	<div ng-show='addSucess' class="addSucess">
+		{{toolTips}}
+	</div>
+</div>

@@ -1,0 +1,41 @@
+<a class="kind_button1" ng-click="back()">返回首页</a>
+<div class="home_search">
+	<input placeholder="全站搜索" ng-model="searchProTxt"/>
+	<a href="javascript:;" ng-click="search2()">Search</a>
+</div>
+<table class="home_table">
+	<tr class="tr1">
+		<td>GoodsID</td>
+		<td>Description</td>
+		<td>Prices</td>
+		<td>Discount</td>
+		<td>Operate</td>
+	</tr>
+	<tr class="tr3">
+		<td ng-show="isloading"><img ng-src="img/loading.png"/>
+		<span>Loading...</span></td>
+	</tr>
+	<tr class="tr2" ng-repeat="pro in prolist ">
+		
+		<td>{{pro.goodsID}}</td>
+		<td>{{pro.goodsName}}</td>
+		<td>{{pro.price | currency}}</td>
+		<td>{{pro.discount}}</td>
+		<td>delete</td>
+	</tr>
+</table>
+<div class="section">
+		<div class="home_content" ng-repeat="item in prolist" >
+			<a><img ng-src="{{ item.goodsListImg }}" goodId="{{ item.goodsID }}" ng-click="goodsDetail($event)"/></a>
+			<p>
+				<span>{{ item.price }}￥</span>
+				<span>折扣：{{ item.discount }}折</span>
+			</p>
+			<p>{{ item[2] }}</p>
+		</div>
+		<div class="pagechange">
+			<span  ng-click="pageIndex($event)" name = 'last'>上一页</span>
+			<span  ng-click="pageIndex($event)" name = 'next'>下一页</span>
+		</div>
+</div>
+

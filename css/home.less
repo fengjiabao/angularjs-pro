@@ -1,0 +1,145 @@
+@import "ba.less";
+* {
+    box-sizing: border-box;
+}
+ul{
+    margin: 0;padding: 0;
+}
+html,
+body {
+    .wh(100%,100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.hide{
+    display: none;
+}
+.list{
+    position: relative;
+    overflow-y: scroll;
+}
+.swiper-button-prev,.swiper-button-next{
+    top: 22% !important;
+    
+}
+.swiper-pagination{
+    left: 49% !important;
+}
+.swiper-button-prev{
+    left: 6% !important;
+}
+.swiper-button-next{
+    right: 6% !important;
+    
+}
+.home_page{
+    margin: 5px 30px !important;
+    img{
+        width: 100%;
+    }
+}
+
+.home_title{
+    margin-top: 76px;
+    padding-left: 17px;
+    display: flex;
+    span{
+        flex: 1;
+        height: 71px;
+        position: relative;
+        cursor: pointer;
+        img{
+            height: 100%;
+            position: absolute;
+            left: 6%;
+        }
+        &:hover{
+            transform: translateX(10px);
+            transition: 0.7s;
+        }
+    }
+}
+.section{
+    padding: 30px 0px;
+    padding-left: 0.4rem;
+    height: 1500px;
+    position: relative;
+    .pagechange{
+            position: absolute;
+            bottom: 14%;
+            padding-left: 35%;
+            padding-right: 30%;
+            span:nth-child(1){
+                margin-right: 100px;
+               
+            }
+            span{
+                display: inline-block;
+                border: 1px solid #02B0E2;
+                border-radius: 3px;
+                height: 30px;
+                width: 66px;
+                text-align: center;
+                line-height: 30px;
+                background: linear-gradient(to bottom, #88e2fd 0%, #0495c2 100%);
+                color: #fff;
+                font-size: 12px;
+                cursor: pointer;
+            }
+        }
+    .home_content{
+        .wh(30%,1.4rem);
+        padding: 5px;
+        float: left;
+        p{
+            padding-left: 11px;
+            padding-right: 0.21rem;
+            span:nth-child(2){
+                float: right;
+                color: #FF6666;
+            }
+        }
+        
+        img{
+            box-shadow: 2px 6px 7px rosybrown;
+            .wh(80%,0.96rem);
+            margin: 5px 10px;
+            cursor: pointer;
+            &:hover{
+                transform:rotate(360deg) scale(1.2);
+                 transition: 1s;
+            }
+            //background: url(http://images.cnblogs.com/cnblogs_com/IT-jian/881511/o_top.png) no-repeat;
+        }
+      
+    }
+}
+
+.backTop{
+        .wh(100px,124px);
+        position: fixed;
+        z-index: 1;
+        right: 5px;
+        bottom: 5px;
+        background-size: contain;
+        img{
+            width: 100%;
+        }
+        cursor: pointer;
+        animation: mymove 1s infinite;
+        -webkit-animation:mymove 1s infinite; /*Safari and Chrome*/
+        
+}
+ @keyframes mymove{
+            from { bottom: 5px;}
+            to { bottom: 20px;}
+            }
+            
+ @-webkit-keyframes mymove /*Safari and Chrome*/{
+            from {bottom: 5px;}
+            to {bottom: 20px;}
+            }
+ 
